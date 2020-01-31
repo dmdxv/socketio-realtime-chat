@@ -19,3 +19,5 @@ npm start
 ## Bugs
 Server crash when user leaves room
 If server restarts whilst users are connected, the server will crash upon next socket event.
+
+![](https://i.gyazo.com/14983077a09e1abc40d158e66263849b.png)
