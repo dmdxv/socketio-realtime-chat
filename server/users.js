@@ -1,5 +1,8 @@
 const users = [];
 
+// User.ID is based of the individual socket ID on connection
+
+// Add user to the array.
 const addUser = ({ id, name, room}) => {
     name = name.trim().toLowerCase();
     room = room.trim().toLowerCase();
@@ -16,6 +19,7 @@ const addUser = ({ id, name, room}) => {
     return { user };
 }
 
+// Remove user from the array.
 const removeUser = ({ id }) => {
     const index = users.findIndex((user) => user.id === id)
 
@@ -25,8 +29,10 @@ const removeUser = ({ id }) => {
 
 };
 
+// Get user information.
 const getUser = (id) => users.find((user) => user.id === id);
 
+// Get all users in a room.
 const getUsersInRoom = (room) => users.filter((user) => user.room === room);
 
 module.exports = { addUser, removeUser, getUser, getUsersInRoom};

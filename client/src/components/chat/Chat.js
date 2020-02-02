@@ -44,7 +44,11 @@ const Chat = ({ location }) => {
     });
 
     return () => {
-      socket.emit("disconnect");
+      socket.emit("disconnect", error => {
+      if (error) {
+        alert(error);
+      }
+    });
 
       socket.off();
     };
